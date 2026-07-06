@@ -1,0 +1,4 @@
+node_modules/
+dist/
+*.sjmclx
+.DS_Store
