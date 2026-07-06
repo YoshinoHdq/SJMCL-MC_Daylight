@@ -1,64 +1,68 @@
 ﻿# MC Daylight
 
-A **SJMCL** extension that bridges your Minecraft server time and real time — right on your launcher dock.
+[**中文**](./README.md) | [English](./README.en.md)
 
-Each server card displays the current in-game time, moon phase, day count, and daylight progress, with a background that **smoothly transitions** through dawn, day, dusk, and night colors as the Minecraft sun moves across the sky.
 
-## Features
+一个 **SJMCL** 扩展插件，在启动器首页实时显示你的 Minecraft 服务器时间与昼夜状态。
 
-- **Real-time clock** — Current local time displayed alongside server time
-- **Per-server game time** — Each server independently tracks its in‑game clock (tick 0 = dawn, tick 6000 = noon, …)
-- **Moon phase** — 8-phase lunar cycle (🌕 Full Moon → 🌑 New Moon)
-- **Daylight progress bar** — Visual indicator of where the sun is in the sky
-- **Color-shifting cards** — Card backgrounds smoothly interpolate through 8 distinct day/night palettes (CSS transitions)
-- **Server icon support** — Auto-fetches server icon via `api.mcsrvstat.us`
-- **Multiple servers** — Add as many servers as you like, each with independent time settings
-- **Persistent state** — Server list and time offsets saved to `localStorage`
+每台服务器卡片展示当前游戏时间、月相、天数和进度条，卡片背景随游戏内太阳位置**平滑过渡**黎明、白昼、黄昏、深夜的色彩。
 
-## Installation
+## 功能
 
-1. Download the latest `.sjmclx` from [Releases](https://github.com/YoshinoHdq/SJMCL-MC-Daylight/releases)
-2. Drag the file into your SJMCL launcher window
-3. Open **Settings → MC Daylight** to add servers and set their current in‑game time
+- **实时时钟** — 现实时间与游戏时间并排显示
+- **独立服务器时间** — 每台服务器独立追踪游戏 tick（tick 0 = 黎明，tick 6000 = 正午）
+- **月相** — 8 相月循环（🌕 满月 → 🌑 新月）
+- **进度条** — 直观显示太阳在天空中的位置
+- **色彩变换卡片** — 卡片背景在 8 个昼夜色板间平滑插值
+- **服务器图标** — 通过 `api.mcsrvstat.us` 自动获取
+- **多服务器支持** — 无限添加，各自独立设置时间
+- **持久化存储** — 服务器列表和时间设置保存在 `localStorage`
 
-## Usage
+## 安装
 
-### Adding a server
+1. 从 [Releases](https://github.com/YoshinoHdq/SJMCL-MC-Daylight/releases) 下载最新的 `.sjmclx` 文件
+2. 拖入 SJMCL 启动器窗口
+3. 打开 **设置 → MC Daylight** 添加服务器并设置当前游戏时间
 
-1. Go to **MC Daylight** in the extension settings
-2. Enter a server name (optional) and IP address (e.g. `mc.hypixel.net`)
-3. Click **Add**
-4. Adjust the slider or tap a preset button (Dawn / Morning / Noon / Dusk / Night) to set the current in‑game time
+## 使用方法
 
-### Home card
+### 添加服务器
 
-The home widget shows all your configured servers. Each card:
+1. 打开扩展设置中的 **MC Daylight**
+2. 输入服务器名称（可选）和 IP 地址（如 `mc.hypixel.net`）
+3. 点击 **添加**
+4. 拖动滑块或点击预设按钮（破晓/清晨/正午/黄昏/夜晚）设置当前游戏时间
 
-- Displays the server icon (auto-fetched)
-- Shows the **in-game time** (🎮 06:30 → 18:30)
-- Shows the **moon phase** and day count
-- Has a **progress bar** indicating the daylight cycle
-- Changes **background color** smoothly as the in-game time progresses
+### 首页卡片
 
-### Preset times
+首页卡片展示所有已配置的服务器。每张卡片：
 
-| Button    | Tick | Description |
-|-----------|------|-------------|
-| Dawn      | 0    | 06:00 – sunrise |
-| Morning   | 2000 | 08:00 – golden hour |
-| Noon      | 6000 | 12:00 – sun overhead |
-| Dusk      | 12000| 18:00 – sunset |
-| Night     | 18000| 00:00 – midnight |
+- 显示服务器图标（自动获取）
+- 显示**游戏时间**（🎮 06:30 → 18:30）
+- 显示**月相**和天数
+- 带有**进度条**表示昼夜位置
+- 背景色随游戏时间**平滑过渡**
 
-## Technical Notes
+### 预设时间
 
-- Minecraft runs at **20 ticks/second**; one in‑game day = 24000 ticks = 20 minutes real time
-- The moon cycle lasts 8 Minecraft days (~160 minutes real time)
-- Colors are **interpolated in RGB** between 8 key frames of the day/night cycle
-- All state is persisted in `localStorage` under the `mct-` prefix
+| 按钮 | Tick | 说明 |
+|------|------|------|
+| 破晓 | 0    | 06:00 – 日出 |
+| 清晨 | 2000 | 08:00 – 黄金时段 |
+| 正午 | 6000 | 12:00 – 太阳当空 |
+| 黄昏 | 12000| 18:00 – 日落 |
+| 夜晚 | 18000| 00:00 – 深夜 |
 
-## Author
+## 技术说明
+
+- Minecraft 以 **20 ticks/秒** 运行，一个游戏日 = 24000 ticks = 20 分钟现实时间
+- 月相周期为 8 个游戏日（约 160 分钟现实时间）
+- 颜色在 8 个昼夜关键帧之间进行 **RGB 插值**
+- 所有状态持久化到 `localStorage`，使用 `mct-` 前缀
+
+## 作者
 
 **hemekewayoshino**
 
-Built with [SJMCL Extension API](https://github.com/SJMC-Dev/awesome-SJMCL-extensions)
+基于 [SJMCL Extension API](https://github.com/SJMC-Dev/awesome-SJMCL-extensions) 构建
+
