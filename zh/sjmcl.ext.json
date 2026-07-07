@@ -1,7 +1,7 @@
 {
-  "identifier": "org.yoshino.mc-daylight",
+  "identifier": "org.yoshino.mc-daylight.zh",
   "name": "MC Daylight",
-  "description": "Real-time Minecraft day/night tracker - bridges your server time and real time.",
+  "description": "实时 Minecraft 昼夜追踪器 — 连接服务器时间与现实时间",
   "author": "hemekewayoshino",
   "version": "0.1.0",
   "minimalLauncherVersion": "0.8.0",
