@@ -1,68 +1,55 @@
-﻿# MC Daylight
+<div align=center>
 
-[中文](./README.md) | [**English**](./README.en.md)
+# MC Daylight
 
+Real-time Minecraft day/night tracker inside your launcher ☀️🌙
 
-A **SJMCL** extension that bridges your Minecraft server time and real time — right on your launcher dock.
+**English · [简体中文](README.md)**
 
-Each server card displays the current in-game time, moon phase, day count, and daylight progress, with a background that **smoothly transitions** through dawn, day, dusk, and night colors as the Minecraft sun moves across the sky.
+</div>
+
+---
+
+## 简介
+
+MC Daylight is a SJMCL extension that displays real-time Minecraft server time and day/night status on the launcher home page, with card backgrounds smoothly transitioning based on the in-game sun position.
 
 ## Features
 
-- **Real-time clock** — Current local time displayed alongside server time
-- **Per-server game time** — Each server independently tracks its in‑game clock (tick 0 = dawn, tick 6000 = noon, …)
-- **Moon phase** — 8-phase lunar cycle (🌕 Full Moon → 🌑 New Moon)
-- **Daylight progress bar** — Visual indicator of where the sun is in the sky
-- **Color-shifting cards** — Card backgrounds smoothly interpolate through 8 distinct day/night palettes (CSS transitions)
-- **Server icon support** — Auto-fetches server icon via `api.mcsrvstat.us`
-- **Multiple servers** — Add as many servers as you like, each with independent time settings
-- **Persistent state** — Server list and time offsets saved to `localStorage`
+- 🕐 Real-time clock — real and in-game time side by side
+- 🌍 Per-server time tracking — each server tracks its own game ticks independently
+- 🌙 Moon phase display — 8-phase moon cycle
+- 📊 Progress bar — visualize the sun position in the sky
+- 🎨 Color-shifting cards — smooth interpolation across 8 day/night color palettes
+- 🖼️ Server icons — auto-fetched
+- ➕ Multi-server support — add unlimited servers with independent settings
 
 ## Installation
 
-1. Download the latest `.sjmclx` from [Releases](https://github.com/YoshinoHdq/SJMCL-MC-Daylight/releases)
-2. Drag the file into your SJMCL launcher window
-3. Open **Settings → MC Daylight** to add servers and set their current in‑game time
+1. Download the .sjmclx file from Releases
+2. Open SJMCL → Settings → Extension Management → Import
+3. Add servers and set the current in-game time in the extension settings
 
-## Usage
+### Time Presets
 
-### Adding a server
+| Button | Tick | Description |
+|--------|------|-------------|
+| Dawn | 0 | 06:00 – Sunrise |
+| Morning | 2000 | 08:00 – Golden hour |
+| Noon | 6000 | 12:00 – Sun overhead |
+| Dusk | 12000 | 18:00 – Sunset |
+| Night | 18000 | 00:00 – Midnight |
 
-1. Go to **MC Daylight** in the extension settings
-2. Enter a server name (optional) and IP address (e.g. `mc.hypixel.net`)
-3. Click **Add**
-4. Adjust the slider or tap a preset button (Dawn / Morning / Noon / Dusk / Night) to set the current in‑game time
+### Technical Notes
 
-### Home card
+- Minecraft runs at 20 ticks/second; one game day = 24000 ticks = 20 minutes real time
+- Moon phase cycle = 8 game days
+- Colors interpolate across 8 day/night keyframes using RGB interpolation
 
-The home widget shows all your configured servers. Each card:
+## Compatibility
 
-- Displays the server icon (auto-fetched)
-- Shows the **in-game time** (🎮 06:30 → 18:30)
-- Shows the **moon phase** and day count
-- Has a **progress bar** indicating the daylight cycle
-- Changes **background color** smoothly as the in-game time progresses
+- Minimum launcher version: 1.1.3
 
-### Preset times
+## License
 
-| Button    | Tick | Description |
-|-----------|------|-------------|
-| Dawn      | 0    | 06:00 – sunrise |
-| Morning   | 2000 | 08:00 – golden hour |
-| Noon      | 6000 | 12:00 – sun overhead |
-| Dusk      | 12000| 18:00 – sunset |
-| Night     | 18000| 00:00 – midnight |
-
-## Technical Notes
-
-- Minecraft runs at **20 ticks/second**; one in‑game day = 24000 ticks = 20 minutes real time
-- The moon cycle lasts 8 Minecraft days (~160 minutes real time)
-- Colors are **interpolated in RGB** between 8 key frames of the day/night cycle
-- All state is persisted in `localStorage` under the `mct-` prefix
-
-## Author
-
-**hemekewayoshino**
-
-Built with [SJMCL Extension API](https://github.com/SJMC-Dev/awesome-SJMCL-extensions)
-
+MIT
