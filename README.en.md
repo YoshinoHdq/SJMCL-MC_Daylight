@@ -30,7 +30,7 @@ Two versions available:
 ## Installation
 
 1. Download the .sjmclx file from Releases
-2. Open SJMCL → Settings → Extension Management → Import
+2. Open SJMCL → Settings → Extension Management → Import. Supports file selection and drag-and-drop import
 3. Add servers and set the in-game time in extension settings
 
 ### Time Presets
